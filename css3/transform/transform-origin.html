@@ -44,14 +44,14 @@ body {
     /** 百分比是相对于目标元素的offsetWidth/offsetHeight **/
     /** 第三个参数不能使用百分比 **/
     transform-origin: 50% 50% 300px;
-    transform: rotateY(15deg);
+    transform: rotateY(45deg);
 }
 
 .self .target{
-    transform-origin: 50% 0 300px;
+    transform-origin: 50% 50% 300px;
     /** 以transform-origin为焦点，施加一个透视投影效果 **/
     /** 保证焦点处位置不变形 **/
-    transform: perspective(300px) rotateX(15deg);
+    transform: perspective(300px) rotateY(45deg);
 }
 
 /** 固定点位置始终不变 **/
