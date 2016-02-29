@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Examples</title>
 <style type="text/css">
-/** 复选框被勾选时，复选框的下一个兄弟元素，且必须是span标签 **/
-input[type="checkbox"]:checked + span {
+/** 复选框被勾选时，复选框接下来所有的兄弟元素，且必须是span标签 **/
+input[type="checkbox"]:checked ~ span {
     color: red;
 }
 
@@ -15,7 +15,11 @@ input[type="checkbox"]:checked + span {
 <body>
 <label>
     <input type="checkbox"/>
-    <span>男</span>
+    <span class="checkable">男</span>
+    <span>女</span>
+    <span>女</span>
+    <span>女</span>
+    <span>女</span>
 </label>
 </body>
 </html>

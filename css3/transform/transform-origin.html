@@ -13,28 +13,24 @@ body {
 }
 
 .container {
-    height: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: darkred;
 }
 
-.container:nth-child(even) {
-    background-color: orange;
-}
-
 .target {
     box-sizing: border-box;
-    width: 100px;
-    height: 100px;
-    border: 10px black solid;
-    background-color: steelblue;
+    width: 200px;
+    height: 200px;
+    background-color: orange;
 }
 
 .port {
     /** 眼睛到投影平面的距离（z） **/
     perspective: 300px;
+    background: steelblue;
 }
 
 .port .target {
@@ -44,24 +40,16 @@ body {
     /** 百分比是相对于目标元素的offsetWidth/offsetHeight **/
     /** 第三个参数不能使用百分比 **/
     transform-origin: 50% 50% 300px;
+    transition: transform 1s ease-in-out;
+}
+
+.port:hover .target {
     transform: rotateY(45deg);
 }
-
-.self .target{
-    transform-origin: 50% 50% 300px;
-    /** 以transform-origin为焦点，施加一个透视投影效果 **/
-    /** 保证焦点处位置不变形 **/
-    transform: perspective(300px) rotateY(45deg);
-}
-
-/** 固定点位置始终不变 **/
 </style>
 </head>
 <body>
 <div class="container port">
-    <div class="target"></div>
-</div>
-<div class="container self">
     <div class="target"></div>
 </div>
 </body>
