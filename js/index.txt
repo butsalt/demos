@@ -1,0 +1,33 @@
+书籍推荐
+    JavaScript权威指南(第6版)
+    JavaScript忍者秘籍
+
+变量
+    方法级作用域
+    避免污染全局
+运算
+    类型转换
+
+数组
+    循环前记录长度
+
+函数
+    apply 与 call
+
+对象
+    作为Map使用
+
+DOM
+    attribute 与 property
+    使用data来保存自定义信息
+
+$
+    什么是jQuery
+    总是用方法
+    善用选择器
+    保留查询结果
+    使用prop获取dom状态
+    html() 与 text()
+    官方api文档(http://api.jquery.com/)
+
+做一把标尺

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkred;
+}
+
+.target {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    border: 10px black solid;
+    background-color: steelblue;
+}
+
+.port {
+    perspective: 300px;
+}
+
+.port .target {
+    /** 1.目标元素顺时针旋转90度 **/
+    /** 2.目标元素向右平移50px **/
+    /** 3.目标元素水平方向拉伸1倍，拉伸原点根据transform-origin **/
+    transform: scaleX(2) translateX(50px) rotateZ(90deg);
+}
+
+</style>
+</head>
+<body>
+<div class="container port">
+    <div class="target"></div>
+</div>
+</body>
+</html>
