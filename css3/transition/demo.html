@@ -5,19 +5,28 @@
 <title>learn</title>
 <style type="text/css">
 
-a {
-    font-size: 20px;
-    transition: all 1s ease-in-out;
+.outer {
+    background: steelblue;
 }
 
-a:hover {
-    background: steelblue;
-    color: #fff;
+.inner {
+    width: 500px;
+    height: 500px;
+    background: orange;
+    /** 目标属性 渐变时长 渐变函数 **/
+    transition: transform 1s ease;
+}
+
+.outer:hover .inner {
+    transform: translateX(500px);
 }
 
 </style>
 </head>
 <body>
-<a>Hover Me!</a>
+<div class="outer">
+    <div class="inner"></div>
+</div>
+<a href="http://cubic-bezier.com/#.17,.67,.83,.67">渐变函数</a>
 </body>
 </html>
