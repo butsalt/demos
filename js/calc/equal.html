@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<script type="text/javascript">
+(function () {
+    console.log(undefined == null);
+
+    //true在做比较时被一律转换成1
+    console.log(true == 1);
+
+    //false在做比较时被一律转换成0
+    console.log(0 == false);
+
+    //字符串将被转换为数值
+    console.log('123' == 123);
+
+    console.log('0' == false);
+
+    //NaN不与任何数相等，包括它自己
+    console.log(NaN !== NaN);
+    console.log(isNaN(NaN));
+
+    function Person (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.valueOf = function () {
+        return this.age;
+    }
+
+    Person.prototype.toString = function () {
+        return this.name;
+    }
+
+    var p = new Person('butSalt', 26);
+    //对象在做比较时先调用valueOf方法转换成原始值，否则调用toString方法
+    //日期对象直接调用toString方法
+    console.log(p == 26);
+
+    console.log([] == false);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<script type="text/javascript">
+var key = 'scope';
+(function () {
+    //key实际上在方法开始时已经被声明了
+    console.log(key);
+    var obj = {
+        name: 'butSalt',
+        age: 26,
+        gender: 'male'
+    };
+
+    for (var key in obj) {
+        var value = obj[key];
+    }
+
+    console.log(key);
+    console.log(value);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

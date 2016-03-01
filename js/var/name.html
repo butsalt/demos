@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<script type="text/javascript">
+(function () {
+    //常量大写，用下划线连接
+    var DELAY_MILLIS = 1000;
+
+    //模拟查询功能
+    var isLoading = false;
+
+    function assembleCondition () {
+        return {
+            name: 'butSalt'
+        };
+    }
+
+    function search (condition) {
+        if (isLoading) {
+            return;
+        }
+        isLoading = true;
+        setTimeout(function () {
+            isLoading = false;
+        }, DELAY_MILLIS);
+    }
+
+    search(assembleCondition());
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

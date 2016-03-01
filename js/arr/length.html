@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<script type="text/javascript">
+(function () {
+    var LENGTH = 999999;
+    var TEST_TEXT = 'test';
+
+    var arr = [];
+    var startDate;
+    var i;
+    startDate = new Date();
+    for (i = 0; i < LENGTH; i++) {
+        arr.push(TEST_TEXT);
+    }
+    console.log(new Date() - startDate);
+
+    startDate = new Date();
+    //在已知长度的情况下，创建数组时就分配空间可以节省时间
+    arr = new Array(LENGTH);
+    for (i = 0; i < LENGTH; i++) {
+        arr[i] = TEST_TEXT;
+    }
+    console.log(new Date() - startDate);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
