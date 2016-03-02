@@ -14,7 +14,7 @@
 <body>
 <div id="container"></div>
 <script type="text/javascript">
-(function () {
+function test () {
     var body = document.body;
     var container = document.getElementById('container');
 
@@ -44,27 +44,37 @@
 
     var INTERVAL = 2500;
     function start (cb) {
-        var isDone = false;
-        var cbArr = [cb];
-        var nextCallback;
-        setTimeout(function () {
-            var cb = cbArr.unshift();
-            if (cb) {
+        var isDone = true;
+        var cbArr = [];
+        if (cb) {
+            cbArr.push(cb);
+            boot();
+        }
 
-            } else {
+        function boot () {
+            isDone = false;
+            setTimeout(tickRun, INTERVAL);
+        }
+
+        function tickRun () {
+            (cbArr.shift())();
+            if (cbArr.length === 0) {
+                isDone = true;
                 console.log('done');
-            }
-            callback();
-            if (nextCallback) {
-                then(nextCallback);
             } else {
-                console.log('done');
+                setTimeout(tickRun, INTERVAL);
             }
-        }, INTERVAL);
+        }
 
         return {
-            then: function (cb) {
+            then: function then (cb) {
                 cbArr.push(cb);
+                if (isDone) {
+                    boot();
+                }
+                return {
+                    then: then
+                };
             }
         };
     }
@@ -87,7 +97,7 @@
             injectDoms(frag);
             container.appendChild(frag);
         });
-})();
+}
 </script>
 </body>
 </html>
