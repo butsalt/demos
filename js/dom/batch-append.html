@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+#container div {
+    background: linear-gradient(to bottom, red, green);
+    color: red;
+    border: 10px black dashed;
+}
+</style>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+(function () {
+    var body = document.body;
+    var container = document.getElementById('container');
+
+    function resetContainer () {
+        container.textContent = '';
+    }
+
+    var LENGTH = 9999;
+    var TEST_TEXT = 
+    `
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    `
+
+    function injectDoms (container) {
+        var i;
+        for (i = 0; i < LENGTH; i++) {
+            var el = document.createElement('div');
+            el.textContent = TEST_TEXT;
+            container.appendChild(el);
+        }
+    }
+
+    var INTERVAL = 2500;
+    function start (cb) {
+        var isDone = false;
+        var cbArr = [cb];
+        var nextCallback;
+        setTimeout(function () {
+            var cb = cbArr.unshift();
+            if (cb) {
+
+            } else {
+                console.log('done');
+            }
+            callback();
+            if (nextCallback) {
+                then(nextCallback);
+            } else {
+                console.log('done');
+            }
+        }, INTERVAL);
+
+        return {
+            then: function (cb) {
+                cbArr.push(cb);
+            }
+        };
+    }
+
+    start(function () {
+        //直接插入
+        injectDoms(container);
+    })
+        .then(resetContainer)
+        .then(function () {
+            //将container先从文档流中移出，再进行添加
+            body.removeChild(container);
+            injectDoms(container);
+            body.appendChild(container);
+        })
+        .then(resetContainer)
+        .then(function () {
+            //将元素加入到DocumentFragment中，再将DocumentFragment插入到容器中
+            var frag = document.createDocumentFragment();
+            injectDoms(frag);
+            container.appendChild(frag);
+        });
+})();
+</script>
+</body>
+</html>

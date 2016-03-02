@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+.hide {
+    display: none;
+}
+</style>
+</head>
+<body>
+<table>
+    <tbody>
+        <tr id="target-row">
+            <th>姓名：</th>
+            <td>butSalt</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="button" id="toggle-btn">隐藏</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script type="text/javascript">
+//使用css可以避免元素本身的style不会被干扰
+(function () {
+    var targetRow = document.getElementById('target-row');
+    var toggleBtn = document.getElementById('toggle-btn');
+
+    var isVisible = true;
+    toggleBtn
+        .addEventListener('click', function () {
+            isVisible = !isVisible;
+            var btnText;
+            if (isVisible) {
+                targetRow.classList.remove('hide');
+                btnText = '隐藏';
+            } else {
+                targetRow.classList.add('hide');
+                btnText = '显示';
+            }
+            toggleBtn.textContent = btnText;
+        });
+})();
+</script>
+</body>
+</html>
