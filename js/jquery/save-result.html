@@ -6,16 +6,24 @@
 <script type="text/javascript" src="/assets/js/jquery-2.2.1.js"></script>
 <script type="text/javascript">
 $(function () {
-    console.log($('input[type="checkbox"]').get(0) === $(':checkbox').get(0));
+    var LENGTH = 1000;
 
-    var $target = $('#target');
-    target.click();
+    var startDate = new Date();
+    for (i = 0; i < LENGTH; i++) {
+        //重复查询会消耗时间
+        $(':checkbox');
+    }
+    console.log(new Date() - startDate);
 
-    console.log($(':checked').get(0) === $target.get(0));
+    startDate = new Date();
+    for (i = 0; i < LENGTH; i++) {
+
+    }
+    console.log(new Date() - startDate);
 });
 </script>
 </head>
 <body>
-<input type="checkbox" id="target"/>
+<input type="checkbox"/>
 </body>
 </html>

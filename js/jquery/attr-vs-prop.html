@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript" src="/assets/js/jquery-2.2.1.js"></script>
+<script type="text/javascript">
+$(function () {
+    var $target = $('#target');
+
+    $target.prop('checked', false);
+
+    //jQuery返回了一个奇怪的返回结果
+    console.log($target.attr('checked') === 'checked');
+});
+</script>
+</head>
+<body>
+<input type="checkbox" id="target" checked />
+</body>
+</html>

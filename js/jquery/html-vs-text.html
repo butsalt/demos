@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript" src="/assets/js/jquery-2.2.1.js"></script>
+<script type="text/javascript">
+$(function () {
+    var text = '<ul><li>123</li></ul>';
+
+    //在需要填入文本时需要使用text，否则插入的文本会被作为html插入
+    $('#text-container').text(text);
+
+    $('#html-container').html(text);
+});
+</script>
+</head>
+<body>
+<div id="text-container"></div>
+<div id="html-container"></div>
+</body>
+</html>
