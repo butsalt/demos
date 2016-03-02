@@ -1,0 +1,8 @@
+.success-test-unit {
+    color: green;
+}
+
+.error-test-unit {
+    color: red;
+    text-decoration: line-through;
+}
