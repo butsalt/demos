@@ -2,14 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>css3</title>
-<style>
-    body {
-        max-width: 1000px;
-        margin: 10px auto;
-    }
+<style type="text/css">
+body {
+    max-width: 1000px;
+    margin: 10px auto;
+}
 </style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    Array.prototype.forEach.call(
+        document.querySelectorAll('a'),
+        function (a) {
+            a.setAttribute('target', '_tab');
+        }
+    );
+});
+</script>
 </head>
 <body>
 <h1>css3</h1>
@@ -20,31 +29,6 @@ var author = {
     github: 'butsalt'
 };
 </pre>
-<section>
-    <h1>网站推荐</h1>
-    <ol>
-        <li>
-            <a href="http://www.zhangxinxu.com/wordpress/">张鑫旭个人博客</a>
-        </li>
-        <li>
-            <a href="http://www.w3cplus.com/">w3cplus</a>
-        </li>
-        <li>
-            <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference">MDN</a>
-        </li>
-    </ol>
-</section>
-<section>
-    <h1>书籍推荐</h1>
-    <ol>
-        <li>
-            <a href="http://www.w3cplus.com/book-comment.html">图解css3</a>
-        </li>
-        <li>
-            <a href="http://book.douban.com/subject/26295140/">css secrets</a>
-        </li>
-    </ol>
-</section>
 <section>
     <h1>选择器</h1>
     <ol>
@@ -176,6 +160,31 @@ var author = {
     <ol>
         <li>
             <a href="http://www.w3cplus.com/content/css3-media-queries">教程</a>
+        </li>
+    </ol>
+</section>
+<section>
+    <h1>网站推荐</h1>
+    <ol>
+        <li>
+            <a href="http://www.zhangxinxu.com/wordpress/">张鑫旭个人博客</a>
+        </li>
+        <li>
+            <a href="http://www.w3cplus.com/">w3cplus</a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference">MDN</a>
+        </li>
+    </ol>
+</section>
+<section>
+    <h1>书籍推荐</h1>
+    <ol>
+        <li>
+            <a href="http://www.w3cplus.com/book-comment.html">图解css3</a>
+        </li>
+        <li>
+            <a href="http://book.douban.com/subject/26295140/">css secrets</a>
         </li>
     </ol>
 </section>
