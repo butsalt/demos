@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+.container {
+    display: flex;
+    background: steelblue;
+    height: 300px;
+}
+
+.container > div {
+    width: 100px;
+    background: orange;
+    margin: 10px;
+}
+
+/** 
+    flex-grow：数值越大，可以扩张时，越积极参加扩张
+    flex-shirink：数值越大，需要收缩时，越积极参加收缩
+    flex-basis：未发生收缩/扩张前元素的参考占用空间大小，这会影响浏览器计算主轴上的剩余空间
+                auto 自动计算
+                30px 占用30px
+ **/
+.container > div:nth-child(1) {
+    flex: 1 1 0;
+}
+
+.container > div:nth-child(2) {
+    flex: 2 2 0;
+}
+
+.container > div:nth-child(3) {
+    flex: 3 3 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
