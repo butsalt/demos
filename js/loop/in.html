@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function Person (name) {
+        this.name = name;
+    }
+
+    Person.prototype.talk = function () {
+        var me  = this;
+        console.log('我的名字是' + me.name);
+    }
+
+    var p = new Person('butSalt');
+
+    //对象上所有可枚举的属性都会被遍历
+    var key;
+    for (key in p) {
+        console.log(key);
+    }
+
+    console.log('=====华丽的分割线====');
+
+    for (key in p){
+        //判断当前这个属性是否为对象自己的属性而不是继承的
+        if (p.hasOwnProperty(key)) {
+            console.log(key);
+        }
+    }
+
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
