@@ -1,17 +1,21 @@
 (function (test) {
-    test(function () {
+    test(function (_) {
+        return _.isObject({});
+    }, '{} 是对象');
+
+    test(function (_) {
         return 1 + 1 === 2;
     }, '1 + 1 = 2');
 
-    test(function () {
+    test(function (_) {
         return 123 + 256 === 777;
     }, '123 + 256 = 777');
 
-    test(function () {
+    test(function (_) {
         throw '发生错误了';
     }, '异常不能被捕获');
 
-    test(function () {
+    test(function (_) {
         var total = 0;
         var i;
         for (i = 1; i <= 999999; i++) {

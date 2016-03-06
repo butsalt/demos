@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var num = 0;
+    var flag = false;
+    var str = '';
+    var obj = {};
+    var arr = [];
+
+    function operate (num, flag, str, obj, arr) {
+        num = num + 1;
+        flag = true;
+        str = 'word';
+        obj['name'] = 'butSalt';
+        arr.push('1');
+    }
+
+    operate(num, flag, str, obj, arr);
+
+    //值传递
+    console.log(num === 0);
+    //值传递
+    console.log(flag === false);
+    //值传递
+    console.log(str === '');
+    //引用传递
+    console.log(obj.name === 'butSalt');
+    //引用传递
+    console.log(arr[0] === '1');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

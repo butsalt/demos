@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var str1 = '123';
+    var str2 = '123';
+
+    //没有被对象化的字符串在js中属于基本类型
+    console.log(typeof str1 === 'string');
+
+    console.log(str1 === str2);
+
+    //通过这种方式可以将字符串转化成字符串对象
+    var strObj1 = new String(str1);
+    console.log(typeof strObj1 === 'object');
+    console.log(str1 !== strObj1);
+    console.log(new String(str1) !== strObj1);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

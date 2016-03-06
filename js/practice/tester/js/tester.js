@@ -1,9 +1,13 @@
+//计时器
 (function () {
     var timer = {};
 
+    //isRuning为true时，说明计时器正在计时
     var isRunning = false;
     var startDate, endDate;
 
+    //如果正在计时，则无效
+    //如果未在计时，则清空计时记录
     function reset () {
         if (isRunning) {
             return;
@@ -12,6 +16,9 @@
         endDate = null;
     }
 
+    //如果没有开始计时，则开始计时
+    //如果正在计时，则无效
+    //如果已经暂停，则继续计时
     function start () {
         if (isRunning) {
             return;
@@ -24,6 +31,8 @@
         }
     }
 
+    //如果正在计时，暂停计时
+    //如果未在计时，则无效
     function pause () {
         if (isRunning) {
             isRunning = false;
@@ -35,6 +44,10 @@
         start: start,
         pause: pause,
         reset: reset,
+        //返回已经经过的毫秒数
+        //如果未开始计时，返回0
+        //如果正在计时，返回从开始到现在已经经过的毫秒数
+        //如果已经暂停，返回从开始到暂停经过的毫秒数
         getDuration: function () {
             var duration = 0;
             if (startDate) {
@@ -52,7 +65,32 @@
         }
     };
 })();
-(function (doc, timer) {
+//由常用方法组合而成的工具对象，按照需要添加
+(function () {
+    function getType (val) {
+        return Object.prototype.toString.call(val);
+    }
+    window.util = {
+        //类型判断
+        isObject: function(val){
+            return typeof val === 'object';
+        },
+        isString: function(val){
+            return getType(val) === '[object String]';
+        },
+        isNumber: function(val){
+            return getType(val) === '[object Number]';
+        },
+        isArray: function(val){
+            return getType(val) === '[object Array]';
+        },
+        isFunction: function(val){
+            return getType(val) === '[object Function]';
+        }
+    };
+})();
+//组合成测试工具
+(function (doc, timer, _) {
     var ul = doc.createElement('ul');
 
     function appendList () {
@@ -71,6 +109,10 @@
         false: '验证失败'
     };
 
+    //参数列表：
+    // Function 当函数的执行结果为true时，证明验证成功
+    // String 用来标明验证目标的字符串
+    // Boolean 为true时，证明要计算函数执行所耗费的时长
     window.test = function (cb, title, needCounting) {
         var li = doc.createElement('li');
         var titleSpan = doc.createElement('span');
@@ -82,7 +124,7 @@
         var passed;
         timer.start();
         try {
-            passed = cb() === true;
+            passed = cb(_) === true;
         } catch (e) {
             passed = false;
         }
@@ -102,4 +144,4 @@
 
         ul.appendChild(li);
     };
-})(document, timer);
+})(document, timer, util);

@@ -8,7 +8,10 @@
     function log (val) {
         console.log('======================================');
         console.warn('现在是:');
-        console.log(typeof val);
+        //这里如果使用typeof的话
+        //typeof [] === 'object'
+        //没有什么意义
+        console.log(Object.prototype.toString.call(val));
         console.log(val);
 
         console.error('string:');
