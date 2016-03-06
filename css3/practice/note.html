@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learn</title>
+<style type="text/css">
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+/** 记事本 **/
+.note {
+    box-sizing: border-box;
+    height: 100%;
+    /** 上下留白 **/
+    padding-top: 45px;
+    padding-bottom: 45px;
+    /** 左侧竖线 **/
+    background-image: linear-gradient(to right, steelblue, steelblue 100%);
+    background-repeat: no-repeat;
+    background-size: 1px 100%;
+    background-position: 40px 0;
+}
+
+/** 可书写区域 **/
+.note-write-scope {
+    box-sizing: border-box;
+    height: 100%;
+    /** 上粗实线 **/
+    border-top: 2px steelblue solid;
+    /** 下粗实线 **/
+    border-bottom: 2px steelblue solid;
+    /** 当发生溢出时使用滚动条 **/
+    overflow: scroll;
+}
+
+/** 实际内容 **/
+.note-content {
+    /** 让行线至少充满整个可书写区域 **/
+    min-height: 100%;
+    /** 左侧留白 **/
+    padding-left: 50px;
+    /** 右侧留白 **/
+    padding-right: 15px;
+    /** 每一行底部的行线 **/
+    background-image: linear-gradient(to top, steelblue, steelblue 1px, transparent 1px);
+    background-repeat: repeat;
+    background-size: 100% 30px;
+    /** 每行30px **/
+    line-height: 30px;
+}
+
+.note-content:focus {
+    outline: none;
+}
+</style>
+</head>
+<body>
+    <div class="note">
+        <div class="note-write-scope">
+            <div class="note-content" contenteditable>
+                <div>太阳当空照</div>
+                <div>花儿对我笑</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
