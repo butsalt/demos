@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js基础实践</title>
+<style type="text/css">
+body {
+    max-width: 1000px;
+    margin: 10px auto;
+}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    Array.prototype.forEach.call(
+        document.querySelectorAll('a'),
+        function (a) {
+            a.setAttribute('target', '_tab');
+        }
+    );
+});
+</script>
+</head>
+<body>
+<h1>正则表达式</h1>
+<pre>
+var author = {
+    from: '知识产权取经团',
+    name: '孙雨珩',
+    qq: '394875284',
+    github: 'butsalt'
+};
+</pre>
+<section>
+    <h1>基础</h1>
+    <ol>
+        <li>
+            <a href="./basic/test.html">test</a>
+        </li>
+    </ol>
+</section>
+</body>
+</html>
