@@ -12,12 +12,12 @@
 
     var i;
     for (i = 0; i < LENGTH; i++) {
-        arr[i] = true;
-        map[i] = i;
+        arr[i] = [i];
+        map[i] = true;
     }
 
     var startDate = new Date();
-    var has = arr.indexOf(LENGTH - 1);
+    var has = arr.indexOf(LENGTH - 1) === -1;
     console.log(new Date() - startDate);
 
     startDate = new Date();
