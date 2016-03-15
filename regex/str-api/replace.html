@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var str = 'I love "js", "js" is my life!';
+
+    //只替换第一个匹配的字符串
+    var regex = /js/;
+    console.log(str.replace(regex, 'javascript'));
+
+    //替换所有匹配的字符串
+    regex = /js/g;
+    console.log(str.replace(regex, 'javascript'));
+
+    //使用$可以引用匹配到的字符串中某个分组的字符串
+    regex = /"([^"]+)"/g;
+    console.log(str.replace(regex, '“$1”'));
+
+    //match 表示匹配到的字符串
+    //group1 表示这个字符串中第一个分组
+    //index 匹配到的字符串的第一个字符在整个字符串中的下标
+    //fullStr 整个字符串
+    var resStr = str.replace(regex, function (match, group1, index, fullStr) {
+        return '“' + group1 + '”';
+    });
+    console.log(resStr);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
