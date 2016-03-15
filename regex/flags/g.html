@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //g模式，会影响到部分api的行为
+    var str = '12342345';
+
+    //永远从字符串的开头开始匹配
+    var regex = /\d{4}/;
+    console.log(regex.exec(str)[0] === '1234');
+    console.log(regex.exec(str)[0] === '1234');
+    console.log(regex.exec(str)[0] === '1234');
+
+    //全局模式下
+    //   如果匹配成功，记录下一个字符的下标，下一次匹配从这个下标开始匹配
+    //   如果匹配失败，下标重置为0，下一次匹配从0开始匹配
+    regex = /\d{4}/g;
+    console.log(regex.exec(str)[0] === '1234');
+    console.log(regex.exec(str)[0] === '2345');
+    console.log(regex.exec(str) === null);
+    console.log(regex.exec(str)[0] === '1234');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

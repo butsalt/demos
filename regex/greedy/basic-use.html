@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var str = '一朵小花啦啦啦';
+    var regex = /一朵小花(啦)*/;
+    console.log(regex.exec(str)[0] === '一朵小花啦啦啦');
+
+    regex = /一朵小花(啦)*?/;
+    console.log(regex.exec(str)[0] === '一朵小花' );
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <script type="text/javascript">
-//声明了一个正则表达式
-var regex = /hello-world/;
+(function () {
+    //声明了一个正则表达式
+    var regex = /hello-world/;
 
-//当测试的字符串中有一段文字满足正则表达式要求，则返回true
-console.log(regex.test('hi hello-world !'));
+    //当测试的字符串中只要有一段文字满足正则表达式要求，则返回true
+    console.log(regex.test('hi hello-world !') === true);
+})();
 </script>
 </head>
 <body>

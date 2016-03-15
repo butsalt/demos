@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //m模式 ^匹配到每行开头，$匹配到每行结尾
+    var regex = /^\d{4}$/mg;
+    var str = '1234\n2345\r3456';
+
+    console.log(regex.exec(str)[0] === '1234');
+    console.log(regex.exec(str)[0] === '2345');
+    console.log(regex.exec(str)[0] === '3456');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

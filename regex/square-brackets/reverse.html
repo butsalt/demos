@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //这个字符只要与方括号中都不匹配即成功
+    var regex = /^[^一朵小花]$/;
+
+    console.log(regex.test('一') === false);
+    console.log(regex.test('朵') === false);
+    console.log(regex.test('小') === false);
+    console.log(regex.test('花') === false);
+    console.log(regex.test('啦') === true);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

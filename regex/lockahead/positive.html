@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //必须后面紧跟':'，但该分组本身不会被分组
+    var regex = /js(?=:)(guide)/;
+
+    var res = regex.exec('js:guide');
+    console.log(res[0] === 'js:guide');
+    console.log(res[1] === 'guide');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

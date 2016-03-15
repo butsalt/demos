@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //\1 引用了第一个匹配到的分组的字符串
+    var regex = /^(['"])一朵小花\1$/;
+
+    console.log(regex.test('"一朵小花"') === true);
+    console.log(regex.test('"一朵小花\'') === false);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
