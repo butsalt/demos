@@ -5,6 +5,8 @@
     //isRuning为true时，说明计时器正在计时
     var isRunning = false;
     var startDate, endDate;
+    //已经经过的毫秒数
+    var passedMillis = 0;
 
     //如果正在计时，则无效
     //如果未在计时，则清空计时记录
@@ -14,6 +16,7 @@
         }
         startDate = null;
         endDate = null;
+        passedMillis = 0;
     }
 
     //如果没有开始计时，则开始计时
@@ -25,10 +28,10 @@
         }
         isRunning = true;
         if (endDate) {
+            passedMillis += endDate - startDate;
             endDate = null;
-        } else {
-            startDate = new Date();
         }
+        startDate = new Date();
     }
 
     //如果正在计时，暂停计时
@@ -49,12 +52,12 @@
         //如果正在计时，返回从开始到现在已经经过的毫秒数
         //如果已经暂停，返回从开始到暂停经过的毫秒数
         getDuration: function () {
-            var duration = 0;
+            var duration = passedMillis;
             if (startDate) {
                 if (endDate) {
-                    duration = endDate - startDate;
+                    duration += endDate - startDate;
                 } else {
-                    duration = new Date() - startDate;
+                    duration += new Date() - startDate;
                 }
             }
 
