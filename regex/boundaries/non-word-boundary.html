@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //\B匹配的是非单词边界
+    var regex = /\B\d\B/;
+    var str = '123';
+    console.log(regex.exec(str)[0] === '2');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

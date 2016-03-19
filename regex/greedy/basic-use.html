@@ -6,11 +6,14 @@
 <script type="text/javascript">
 (function () {
     var str = '一朵小花啦啦啦';
-    var regex = /一朵小花(啦)*/;
+    var regex = /一朵小花(啦)+/;
+    //重复符号默认是贪婪匹配
     console.log(regex.exec(str)[0] === '一朵小花啦啦啦');
 
-    regex = /一朵小花(啦)*?/;
-    console.log(regex.exec(str)[0] === '一朵小花' );
+    //在重复符号后加?变为非贪婪匹配
+    //'一朵小花啦'已经足够满足匹配规则，所以直接被提取了出来
+    regex = /一朵小花(啦)+?/;
+    console.log(regex.exec(str)[0] === '一朵小花啦' );
 })();
 </script>
 </head>
