@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //书写一个正则表达式匹配ip地址
+    var regex = /^(\d{1,3}\.){3}\d{1,3}$/;
+
+    var str = '192.168.1.1';
+    console.log(regex.test(str) === true);
+
+    //证明表达式还不够严谨
+    str = '999.999.999.999';
+    console.log(regex.test(str) === true);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
