@@ -1,5 +1,5 @@
 # demos
-a bunch of demos
+a bunch of demo
 
 ##Run
 在项目目录下运行http-server即可
