@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<link rel="stylesheet" type="text/css" href="/assets/lib/ol/4.4.2/ol.css"/>
+<style type="text/css">
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  .map {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+<div id="J-map" class="map"></div>
+<script type="text/javascript" src="/assets/lib/ol/4.4.2/ol.js"></script>
+<script type="text/javascript">
+  (function () {
+    var formatter = new ol.format.GeoJSON({
+      featureProjection: 'EPSG:3857'
+    });
+    var geoJSON = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          // 用来声明当前geoJSON使用的坐标体系
+          // 已废弃，统一为epsg:4326
+          'name': 'EPSG:4326'
+        }
+      },
+      'features': [{
+        'type': 'Feature',
+        'geometry': {
+          'type': 'Polygon',
+          'coordinates': [
+            [[-3, 3], [-3, -3], [3, -3], [3, 3], [-3, 3]]
+          ]
+        }
+      }]
+    };
+    var features = formatter.readFeatures(geoJSON);
+    var map = new ol.Map({
+      layers: [
+        // 瓦片图
+        new ol.layer.Tile({
+          // 来源
+          source: new ol.source.OSM()
+        }),
+        // 矢量图
+        new ol.layer.Vector({
+          // 来源
+          source: new ol.source.Vector({
+            features: features
+          }),
+          // 样式
+          style: new ol.style.Style({
+            // 填充
+            fill: new ol.style.Fill({
+              // 颜色
+              color: 'steelblue'
+            }),
+            // 边框
+            stroke: new ol.style.Stroke({
+              // 颜色
+              color: 'red',
+              // 线条宽度(像素)
+              width: 2
+            })
+          })
+        })
+      ],
+      controls: [],
+      target: 'J-map',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 2,
+        // EPSG:3857是openlayers默认的投影
+        projection: 'EPSG:3857',
+      })
+    });
+  })();
+</script>
+</body>
+</html>

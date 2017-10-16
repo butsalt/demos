@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<link rel="stylesheet" type="text/css" href="/assets/lib/ol/4.4.2/ol.css"/>
+<style type="text/css">
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  .map {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+<div id="J-map" class="map"></div>
+<script type="text/javascript" src="/assets/lib/ol/4.4.2/ol.js"></script>
+<script type="text/javascript">
+  (function () {
+    // XYZ源的原理：
+    // 地图上展示的地图全景是由多块图片拼接而成
+    // x-水平 y-垂直 z-海拔，xyz的组合确定一块图片
+    // 实际发起请求时，openlayers会根据当前视口信息(中心点，海拔)，计算出所需的图片资源，将url中的xyz替换成实际值
+    // {a-c}代表在a-c之间随机生成一个字母进行替换
+    // 下面三台服务器提供的资源相同，随机在a-c之间替换可以减轻单台服务器的压力
+    // a.tile.thunderforest.com
+    // b.tile.thunderforest.com
+    // c.tile.thunderforest.com
+    var source = new ol.source.XYZ({
+      url: 'https://{a-c}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png' + 
+           '?apikey=0e6fc415256d4fbb9b5166a718591d71'
+    });
+    var map = new ol.Map({
+      layers: [
+        // 瓦片图
+        new ol.layer.Tile({
+          // 设置来源
+          source: source
+        })
+      ],
+      controls: [],
+      // 挂载点的id或者直接传dom
+      target: 'J-map',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 2,
+        // EPSG:3857是openlayers默认的投影
+        projection: 'EPSG:3857',
+      })
+    });
+  })();
+</script>
+</body>
+</html>
