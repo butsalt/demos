@@ -8,3 +8,4 @@ a bunch of demo
 1. css3
 2. js-practice（js基础实践）
 3. regex（正则表达式）
+4. openlayers
