@@ -5,14 +5,14 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //方括号括起表示这个字符只要与方括号中任意一个字符匹配即成功
-    var regex = /^[一朵小花]$/;
+  //方括号括起表示这个字符只要与方括号中任意一个字符匹配即成功
+  var regex = /^[一朵小花]$/;
 
-    console.log(regex.test('一') === true);
-    console.log(regex.test('朵') === true);
-    console.log(regex.test('小') === true);
-    console.log(regex.test('花') === true);
-    console.log(regex.test('啦') === false);
+  console.log(regex.test('一') === true);
+  console.log(regex.test('朵') === true);
+  console.log(regex.test('小') === true);
+  console.log(regex.test('花') === true);
+  console.log(regex.test('啦') === false);
 })();
 </script>
 </head>

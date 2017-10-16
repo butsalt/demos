@@ -5,70 +5,70 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function log (val) {
-        console.log('======================================');
-        console.warn('现在是:');
-        //这里如果使用typeof的话
-        //typeof [] === 'object'
-        //没有什么意义
-        console.log(Object.prototype.toString.call(val));
-        console.log(val);
+  function log (val) {
+    console.log('======================================');
+    console.warn('现在是:');
+    //这里如果使用typeof的话
+    //typeof [] === 'object'
+    //没有什么意义
+    console.log(Object.prototype.toString.call(val));
+    console.log(val);
 
-        console.error('string:');
-        console.log(String(val));
+    console.error('string:');
+    console.log(String(val));
 
-        console.error('number:');
-        console.log(Number(val));
+    console.error('number:');
+    console.log(Number(val));
 
-        console.error('boolean');
-        console.log(Boolean(val));
+    console.error('boolean');
+    console.log(Boolean(val));
 
-        console.log('======================================');
-    }
+    console.log('======================================');
+  }
 
-    log(undefined);
-    log(null);
+  log(undefined);
+  log(null);
 
-    log(true);
-    log(false);
+  log(true);
+  log(false);
 
-    log('');
-    log('1.2');
-    log('one');
+  log('');
+  log('1.2');
+  log('one');
 
-    log(0);
-    log(-0);
-    log(NaN);
-    log(Infinity);
-    log(-Infinity);
-    log(1);
+  log(0);
+  log(-0);
+  log(NaN);
+  log(Infinity);
+  log(-Infinity);
+  log(1);
 
-    function Person (name, age) {
-        this.name = name;
-        this.age = age;
-    }
+  function Person (name, age) {
+    this.name = name;
+    this.age = age;
+  }
 
-    Person.prototype.valueOf = function () {
-        return this.age;
-    }
+  Person.prototype.valueOf = function () {
+    return this.age;
+  }
 
-    Person.prototype.toString = function () {
-        return this.name;
-    }
+  Person.prototype.toString = function () {
+    return this.name;
+  }
 
-    //对象到数值的转换优先使用valueOf方法，否则使用toString方法，再否则抛异常
-    //对象到字符串的转换优先使用toString方法，否则使用valueOf方法，再否则抛异常
-    log(new Person('butSalt', 26));
+  //对象到数值的转换优先使用valueOf方法，否则使用toString方法，再否则抛异常
+  //对象到字符串的转换优先使用toString方法，否则使用valueOf方法，再否则抛异常
+  log(new Person('butSalt', 26));
 
-    log([]);
+  log([]);
 
-    log([123]);
+  log([123]);
 
-    log(['123']);
+  log(['123']);
 
-    log([123, '123']);
+  log([123, '123']);
 
-    log(function test () {});
+  log(function test () {});
 })();
 </script>
 </head>

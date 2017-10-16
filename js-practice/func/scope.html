@@ -5,25 +5,25 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var count = 0;
-    var ticktack;
-    //声明的ticktack函数直接被当作setTimeout的参数
-    //只能在本函数内部使用
-    setTimeout(function ticktack () {
-        console.log(count++);
-        setTimeout(ticktack, 1000);
-    }, 1000);
-    //true
-    console.log(ticktack === undefined);
+  var count = 0;
+  var ticktack;
+  //声明的ticktack函数直接被当作setTimeout的参数
+  //只能在本函数内部使用
+  setTimeout(function ticktack () {
+    console.log(count++);
+    setTimeout(ticktack, 1000);
+  }, 1000);
+  //true
+  console.log(ticktack === undefined);
 
-    var two;
-    var one = function two () {
-        //true
-        console.log(two !== undefined);
-    };
+  var two;
+  var one = function two () {
     //true
-    console.log(two === undefined);
-    one();
+    console.log(two !== undefined);
+  };
+  //true
+  console.log(two === undefined);
+  one();
 })();
 </script>
 </head>

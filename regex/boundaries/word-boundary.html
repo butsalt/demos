@@ -5,15 +5,15 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //\b匹配的是单词边界
-    //比如一个字符串的开头，一个字符和空白的分隔位置
-    var regex = /\b\d\b/g;
-    var str = '1 2 3';
-    console.log(regex.exec(str)[0] === '1');
+  //\b匹配的是单词边界
+  //比如一个字符串的开头，一个字符和空白的分隔位置
+  var regex = /\b\d\b/g;
+  var str = '1 2 3';
+  console.log(regex.exec(str)[0] === '1');
 
-    console.log(regex.exec(str)[0] === '2');
+  console.log(regex.exec(str)[0] === '2');
 
-    console.log(regex.exec(str)[0] === '3');
+  console.log(regex.exec(str)[0] === '3');
 })();
 </script>
 </head>

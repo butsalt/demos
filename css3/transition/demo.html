@@ -6,26 +6,26 @@
 <style type="text/css">
 
 .outer {
-    background: steelblue;
+  background: steelblue;
 }
 
 .inner {
-    width: 500px;
-    height: 500px;
-    background: orange;
-    /** 目标属性 渐变时长 渐变函数 **/
-    transition: transform 1s ease;
+  width: 500px;
+  height: 500px;
+  background: orange;
+  /** 目标属性 渐变时长 渐变函数 **/
+  transition: transform 1s ease;
 }
 
 .outer:hover .inner {
-    transform: translateX(500px);
+  transform: translateX(500px);
 }
 
 </style>
 </head>
 <body>
 <div class="outer">
-    <div class="inner"></div>
+  <div class="inner"></div>
 </div>
 <a href="http://cubic-bezier.com/#.17,.67,.83,.67">渐变函数</a>
 </body>

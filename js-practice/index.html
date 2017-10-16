@@ -3,143 +3,119 @@
 <head>
 <meta charset="utf-8">
 <title>js基础实践</title>
-<style type="text/css">
-body {
-    max-width: 1000px;
-    margin: 10px auto;
-}
-</style>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-    Array.prototype.forEach.call(
-        document.querySelectorAll('a'),
-        function (a) {
-            a.setAttribute('target', '_tab');
-        }
-    );
-});
-</script>
 </head>
 <body>
 <h1>js基础实践</h1>
-<pre>
-var author = {
-    from: '知识产权取经团',
-    name: '孙雨珩',
-    qq: '394875284',
-    github: 'butsalt'
-};
-</pre>
 <section>
-    <h1>变量</h1>
-    <ol>
-        <li>
-            <a href="./var/name.html">以功能命名</a>
-        </li>
-        <li>
-            <a href="./var/scope.html">方法级作用域</a>
-        </li>
-        <li>
-            <a href="./var/not-public.html">避免污染全局</a>
-        </li>
-    </ol>
+  <h1>变量</h1>
+  <ol>
+    <li>
+      <a href="./var/name.html">以功能命名</a>
+    </li>
+    <li>
+      <a href="./var/scope.html">方法级作用域</a>
+    </li>
+    <li>
+      <a href="./var/not-public.html">避免污染全局</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>运算</h1>
-    <ol>
-        <li>
-            <a href="./calc/str.html">字符串属于基本类型</a>
-        </li>
-        <li>
-            <a href="./calc/transform.html">类型转换</a>
-        </li>
-        <li>
-            <a href="./calc/equal.html">==</a>
-        </li>
-        <li>
-            <a href="./calc/abs-equal.html">===</a>
-        </li>
-    </ol>
+  <h1>运算</h1>
+  <ol>
+    <li>
+      <a href="./calc/str.html">字符串属于基本类型</a>
+    </li>
+    <li>
+      <a href="./calc/transform.html">类型转换</a>
+    </li>
+    <li>
+      <a href="./calc/equal.html">==</a>
+    </li>
+    <li>
+      <a href="./calc/abs-equal.html">===</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>循环</h1>
-    <ol>
-        <li>
-            <a href="./loop/in.html">in</a>
-        </li>
-    </ol>
+  <h1>循环</h1>
+  <ol>
+    <li>
+      <a href="./loop/in.html">in</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>Object</h1>
-    <ol>
-        <li>
-            <a href="./obj/map.html">作为Map使用</a>
-        </li>
-    </ol>
+  <h1>Object</h1>
+  <ol>
+    <li>
+      <a href="./obj/map.html">作为Map使用</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>函数</h1>
-    <ol>
-        <li>
-            <a href="./func/scope.html">闭包</a>
-        </li>
-        <li>
-            <a href="./func/pass.html">参数传递</a>
-        </li>
-    </ol>
+  <h1>函数</h1>
+  <ol>
+    <li>
+      <a href="./func/scope.html">闭包</a>
+    </li>
+    <li>
+      <a href="./func/pass.html">参数传递</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>数组</h1>
-    <ol>
-        <li>
-            <a href="./arr/new.html">创建数组时声明数组长度</a>
-        </li>
-        <li>
-            <a href="./arr/loop.html">循环前记录长度</a>
-        </li>
-    </ol>
+  <h1>数组</h1>
+  <ol>
+    <li>
+      <a href="./arr/new.html">创建数组时声明数组长度</a>
+    </li>
+    <li>
+      <a href="./arr/loop.html">循环前记录长度</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>$</h1>
-    <ol>
-        <li>
-            <a href="./jquery/method.html">总是用方法</a>
-        </li>
-        <li>
-            <a href="./jquery/selector.html">善用选择器</a>
-        </li>
-        <li>
-            <a href="./jquery/save-result.html">保留查询结果</a>
-        </li>
-        <li>
-            <a href="./jquery/html-vs-text.html">html() 与 text()</a>
-        </li>
-        <li>
-            <a href="./jquery/empty-vs-detach.html">empty() 与 detach()</a>
-        </li>
-        <li>
-            <a href="http://api.jquery.com/">官方api文档</a>
-        </li>
-    </ol>
+  <h1>$</h1>
+  <ol>
+    <li>
+      <a href="./jquery/method.html">总是用方法</a>
+    </li>
+    <li>
+      <a href="./jquery/selector.html">善用选择器</a>
+    </li>
+    <li>
+      <a href="./jquery/save-result.html">保留查询结果</a>
+    </li>
+    <li>
+      <a href="./jquery/html-vs-text.html">html() 与 text()</a>
+    </li>
+    <li>
+      <a href="./jquery/empty-vs-detach.html">empty() 与 detach()</a>
+    </li>
+    <li>
+      <a href="http://api.jquery.com/">官方api文档</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>书籍推荐</h1>
-    <ol>
-        <li>
-            <a href="http://book.douban.com/subject/10549733/">JavaScript权威指南(第6版)</a>
-        </li>
-        <li>
-            <a href="http://book.douban.com/subject/26638316/">JavaScript忍者秘籍</a>
-        </li>
-    </ol>
+  <h1>书籍推荐</h1>
+  <ol>
+    <li>
+      <a href="http://book.douban.com/subject/10549733/">JavaScript权威指南(第6版)</a>
+    </li>
+    <li>
+      <a href="http://book.douban.com/subject/26638316/">JavaScript忍者秘籍</a>
+    </li>
+  </ol>
 </section>
 <section>
-    <h1>练习</h1>
-    <ol>
-        <li>
-            <a href="./practice/tester/index.html">测试工具</a>
-        </li>
-    </ol>
+  <h1>练习</h1>
+  <ol>
+    <li>
+      <a href="./practice/tester/index.html">测试工具</a>
+    </li>
+  </ol>
 </section>
 </body>
 </html>

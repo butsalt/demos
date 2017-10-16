@@ -1,8 +1,8 @@
 .success-test-unit {
-    color: green;
+  color: green;
 }
 
 .error-test-unit {
-    color: red;
-    text-decoration: line-through;
+  color: red;
+  text-decoration: line-through;
 }

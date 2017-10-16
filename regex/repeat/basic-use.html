@@ -5,25 +5,25 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //'啦'可以重复1到3次
-    var regex = /^啦{1,3}$/;
+  //'啦'可以重复1到3次
+  var regex = /^啦{1,3}$/;
 
-    console.log(regex.test('啦') === true);
-    console.log(regex.test('啦啦') === true);
-    console.log(regex.test('啦啦啦') === true);
-    console.log(regex.test('啦啦啦啦') === false);
+  console.log(regex.test('啦') === true);
+  console.log(regex.test('啦啦') === true);
+  console.log(regex.test('啦啦啦') === true);
+  console.log(regex.test('啦啦啦啦') === false);
 
-    //'啦'要重复2次
-    regex = /^啦{2}$/;
-    console.log(regex.test('啦') === false);
-    console.log(regex.test('啦啦') === true);
-    console.log(regex.test('啦啦啦') === false);
+  //'啦'要重复2次
+  regex = /^啦{2}$/;
+  console.log(regex.test('啦') === false);
+  console.log(regex.test('啦啦') === true);
+  console.log(regex.test('啦啦啦') === false);
 
-    //'啦'至少要重复2次
-    regex = /^啦{2,}$/;
-    console.log(regex.test('啦') === false);
-    console.log(regex.test('啦啦') === true);
-    console.log(regex.test('啦啦啦') === true);
+  //'啦'至少要重复2次
+  regex = /^啦{2,}$/;
+  console.log(regex.test('啦') === false);
+  console.log(regex.test('啦啦') === true);
+  console.log(regex.test('啦啦啦') === true);
 })();
 </script>
 </head>

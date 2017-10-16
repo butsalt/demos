@@ -5,14 +5,14 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //要注意，字符串也适用\作为转义符
-    //个人建议能使用字面量声明正则表达式时，尽量使用字面量声明
-    var regex = new RegExp('\\.\\d\\.', 'g');
-    var str = '123.4..5..6.';
+  //要注意，字符串也适用\作为转义符
+  //个人建议能使用字面量声明正则表达式时，尽量使用字面量声明
+  var regex = new RegExp('\\.\\d\\.', 'g');
+  var str = '123.4..5..6.';
 
-    console.log(regex.exec(str)[0] === '.4.');
-    console.log(regex.exec(str)[0] === '.5.');
-    console.log(regex.exec(str)[0] === '.6.');
+  console.log(regex.exec(str)[0] === '.4.');
+  console.log(regex.exec(str)[0] === '.5.');
+  console.log(regex.exec(str)[0] === '.6.');
 })();
 </script>
 </head>

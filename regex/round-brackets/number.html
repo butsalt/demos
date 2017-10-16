@@ -5,17 +5,17 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var regex = /(一朵)(小花)/;
+  var regex = /(一朵)(小花)/;
 
-    //执行一次匹配行为
-    var res = regex.exec('啦一朵小花啦');
+  //执行一次匹配行为
+  var res = regex.exec('啦一朵小花啦');
 
-    //完整被匹配到的字符串
-    console.log(res[0] === '一朵小花');
-    //第一个分组
-    console.log(res[1] === '一朵');
-    //第二个分组
-    console.log(res[2] === '小花');
+  //完整被匹配到的字符串
+  console.log(res[0] === '一朵小花');
+  //第一个分组
+  console.log(res[1] === '一朵');
+  //第二个分组
+  console.log(res[2] === '小花');
 })();
 </script>
 </head>

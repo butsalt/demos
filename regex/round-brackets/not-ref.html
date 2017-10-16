@@ -5,11 +5,11 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //'我是'这个组不参与分组
-    var regex = /^(?:我是)(['"])一朵小花\1$/;
+  //'我是'这个组不参与分组
+  var regex = /^(?:我是)(['"])一朵小花\1$/;
 
-    console.log(regex.test('我是"一朵小花"') === true);
-    console.log(regex.test('我是"一朵小花\'') === false);
+  console.log(regex.test('我是"一朵小花"') === true);
+  console.log(regex.test('我是"一朵小花\'') === false);
 })();
 </script>
 </head>

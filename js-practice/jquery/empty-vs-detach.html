@@ -3,44 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <title>learn</title>
-<script type="text/javascript" src="/assets/js/jquery-2.2.1.js"></script>
+<script type="text/javascript" src="/assets/lib/jquery/2.2.1/jquery.js"></script>
 <script type="text/javascript">
 $(function () {
-    var $emptyTestBtn = $('#empty-test-btn');
-    var $detachTestBtn = $('#detach-test-btn');
+  var $emptyTestBtn = $('#empty-test-btn');
+  var $detachTestBtn = $('#detach-test-btn');
 
-    function bark () {
-        alert('这个按钮还能用！');
-    }
+  function bark () {
+    alert('这个按钮还能用！');
+  }
 
-    $emptyTestBtn.click(bark);
-    $detachTestBtn.click(bark);
+  $emptyTestBtn.click(bark);
+  $detachTestBtn.click(bark);
 
-    var $emptyTestContainer = $('#empty-test-container');
-    var $detachTestContainer = $('#detach-test-container');
+  var $emptyTestContainer = $('#empty-test-container');
+  var $detachTestContainer = $('#detach-test-container');
 
-    //为防止内存泄露，子元素上的事件都被移除了
-    $emptyTestContainer.empty();
-    $emptyTestContainer.append($emptyTestBtn);
+  //为防止内存泄露，子元素上的事件都被移除了
+  $emptyTestContainer.empty();
+  $emptyTestContainer.append($emptyTestBtn);
 
-    //元素只是从文档流中卸下，绑定的事件没有被移除
-    $detachTestBtn.detach();
-    $detachTestContainer.append($detachTestBtn);
+  //元素只是从文档流中卸下，绑定的事件没有被移除
+  $detachTestBtn.detach();
+  $detachTestContainer.append($detachTestBtn);
 });
 </script>
 </head>
 <body>
 <section>
-    <h1>empty测试</h1>
-    <div id="empty-test-container">
-        <button type="button" id="empty-test-btn">alert</button>
-    </div>
+  <h1>empty测试</h1>
+  <div id="empty-test-container">
+    <button type="button" id="empty-test-btn">alert</button>
+  </div>
 </section>
 <section>
-    <h1>detach测试</h1>
-    <div id="detach-test-container">
-        <button type="button" id="detach-test-btn">alert</button>
-    </div>
+  <h1>detach测试</h1>
+  <div id="detach-test-container">
+    <button type="button" id="detach-test-btn">alert</button>
+  </div>
 </section>
 </body>
 </html>

@@ -5,19 +5,19 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var str = 'I love "js", "javascript" is my life!';
+  var str = 'I love "js", "javascript" is my life!';
 
-    //返回第一个匹配的字符串的解析结果，是个数组
-    var regex = /"([^"]+)"/;
-    var res = str.match(regex);
-    console.log(res[0] === '"js"');
-    console.log(res[1] === 'js');
+  //返回第一个匹配的字符串的解析结果，是个数组
+  var regex = /"([^"]+)"/;
+  var res = str.match(regex);
+  console.log(res[0] === '"js"');
+  console.log(res[1] === 'js');
 
-    //返回所有匹配到的字符串，是个数组
-    var regex = /"([^"]+)"/g;
-    var res = str.match(regex);
-    console.log(res[0] === '"js"');
-    console.log(res[1] === '"javascript"');
+  //返回所有匹配到的字符串，是个数组
+  var regex = /"([^"]+)"/g;
+  var res = str.match(regex);
+  console.log(res[0] === '"js"');
+  console.log(res[1] === '"javascript"');
 })();
 </script>
 </head>
